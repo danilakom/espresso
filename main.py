@@ -7,11 +7,11 @@ import sqlite3
 class App(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi(r"E:\Введение в репозитории. Подключение в PyCharm. Работа с удаленным репозиторием\Эспрессо\main.ui", self)
+        uic.loadUi("main.ui", self)
         self.initUi()
     
     def initUi(self):
-        con = sqlite3.connect(r"E:\Введение в репозитории. Подключение в PyCharm. Работа с удаленным репозиторием\Эспрессо\coffee.sqlite")
+        con = sqlite3.connect("coffee.sqlite")
         cur = con.cursor()
 
         result = list(cur.execute("select * from coffe").fetchall())
